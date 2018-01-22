@@ -22,10 +22,6 @@ export class AF {
     this.users = this.af.database.list('users');
   }
 
-  /**
-   * Logs in the user
-   * @returns {firebase.Promise<FirebaseAuthState>}
-   */
   loginWithGoogle() {
     return this.af.auth.login({
       provider: AuthProviders.Google,
@@ -33,16 +29,10 @@ export class AF {
     });
   }
 
-  /**
-   * Logs out the current user
-   */
   logout() {
     return this.af.auth.logout();
   }
 
-  /**
-   *
-   */
   addUserInfo(){
     //We saved their auth info now save the rest to the db.
     this.users.push({
@@ -51,10 +41,6 @@ export class AF {
     });
   }
 
-  /**
-   * Saves a message to the Firebase Realtime Database
-   * @param text
-   */
   sendMessage(text) {
     var message = {
       message: text,
@@ -65,11 +51,6 @@ export class AF {
     this.messages.push(message);
   }
 
-  /**
-   *
-   * @param model
-   * @returns {firebase.Promise<void>}
-   */
   registerUser(email, password) {
     console.log(email)
     return this.af.auth.createUser({
@@ -80,12 +61,6 @@ export class AF {
 
   }
 
-  /**
-   *
-   * @param uid
-   * @param model
-   * @returns {firebase.Promise<void>}
-   */
   saveUserInfoFromForm(uid, name, email) {
     return this.af.database.object('registeredUsers/' + uid).set({
       name: name,
@@ -93,12 +68,6 @@ export class AF {
     });
   }
 
-  /**
-   * Logs the user in using their Email/Password combo
-   * @param email
-   * @param password
-   * @returns {firebase.Promise<FirebaseAuthState>}
-   */
   loginWithEmail(email, password) {
     return this.af.auth.login({
         email: email,

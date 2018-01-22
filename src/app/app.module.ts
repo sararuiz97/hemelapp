@@ -10,11 +10,12 @@ import {FormsModule} from "@angular/forms";
 import { RegistrationPageComponent } from './registration-page/registration-page.component';
 
 export const firebaseConfig = {
-  apiKey: "*************************",
-  authDomain: "fir-crud-93710.firebaseapp.com",
-  databaseURL: "https://fir-crud-93710.firebaseio.com",
-  storageBucket: "fir-crud-93710.appspot.com",
-  messagingSenderId: "720204736178"
+    apiKey: "AIzaSyDosWLCRwu2X9MJx5d3t--2d_Ygyp0rIWk",
+    authDomain: "pagina-e79fe.firebaseapp.com",
+    databaseURL: "https://pagina-e79fe.firebaseio.com",
+    projectId: "pagina-e79fe",
+    storageBucket: "pagina-e79fe.appspot.com",
+    messagingSenderId: "262086105509"
 };
 
 const routes: Routes = [
